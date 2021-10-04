@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>../legou-registry</module>
+        <module>../legou-config</module>
     </modules>
     <packaging>pom</packaging>
 
