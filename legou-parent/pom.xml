@@ -16,6 +16,7 @@
         <module>../legou-registry</module>
         <module>../legou-config</module>
         <module>../legou-common</module>
+        <module>../legou-core</module>
     </modules>
 
     <!-- 父工程坐标 -->
