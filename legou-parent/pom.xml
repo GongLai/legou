@@ -8,11 +8,15 @@
     <groupId>com.hbb</groupId>
     <artifactId>legou-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <description>项目父工程</description>
+
+    <!-- 子项目信息 -->
     <modules>
         <module>../legou-registry</module>
         <module>../legou-config</module>
+        <module>../legou-common</module>
     </modules>
-    <packaging>pom</packaging>
 
     <!-- 父工程坐标 -->
     <parent>
