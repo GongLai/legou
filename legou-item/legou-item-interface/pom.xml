@@ -4,62 +4,34 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <!-- 父工程坐标 -->
     <parent>
-        <artifactId>legou-parent</artifactId>
-        <groupId>com.hbb</groupId>
+        <artifactId>legou-item</artifactId>
+        <groupId>com.hbb.legou.item</groupId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../legou-parent/pom.xml</relativePath>
     </parent>
-
     <!-- 项目信息 -->
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.hbb.legou.core</groupId>
-    <artifactId>legou-core</artifactId>
-    <description>基类工程</description>
-
-    <!-- 依赖配置 -->
+    <artifactId>legou-item-interface</artifactId>
+    <description>存放fegin调用的接口和实体类</description>
+    <!-- 依赖管理 -->
     <dependencies>
-
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <!--mybatis pulus-->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.3.2</version>
-        </dependency>
-        <!-- 分页 -->
-        <dependency>
-            <groupId>com.github.pagehelper</groupId>
-            <artifactId>pagehelper</artifactId>
-            <version>5.1.11</version>
+            <groupId>com.hbb.legou.core</groupId>
+            <artifactId>legou-core</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
         </dependency>
-        <!-- swagger -->
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>2.9.2</version>
-        </dependency>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>2.9.2</version>
-        </dependency>
-
     </dependencies>
-
-    <!-- 插件管理 -->
+    <!-- 插件配置 -->
     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <!--在springboot项目中没有启动器，需要如下配置，否则mvn:install报错-->
                 <configuration>
                     <mainClass>com.core.Starter</mainClass>
                     <layout>ZIP</layout>

@@ -13,11 +13,11 @@ public class BaseTreeEntity extends BaseEntity{
 
     @TableField("order_")
     private Integer order; //排序字段
-    @TableField("parent_id_")
+    @TableField("parent_id")
     private Long parentId; //父节点id
-    @TableField("title_")
+    @TableField("title")
     private String title; //节点名称
-    @TableField("expand_")
+    @TableField("expand")
     private Boolean expand = false; //是否展开节点
 
 }
