@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * 品牌管理
+ */
 @RestController
 @RequestMapping("/item/brand")
 @CrossOrigin

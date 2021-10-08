@@ -38,9 +38,9 @@
             a.order_ AS "order",
             a.parent_id AS "parentId"
         FROM
-            category_ a
-                LEFT JOIN category_brand_ b ON b.category_id = a.id
-                LEFT JOIN brand_ c ON c.id = b.brand_id
+            category a
+                LEFT JOIN category_brand b ON b.category_id = a.id
+                LEFT JOIN brand c ON c.id = b.brand_id
         WHERE
             c.id = #{id}
     </select>

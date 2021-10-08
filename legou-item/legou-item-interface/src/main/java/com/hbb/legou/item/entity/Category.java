@@ -12,7 +12,6 @@ import lombok.Data;
 @TableName("category")
 public class Category extends BaseTreeEntity {
 
-    @TableField("is_parent")
     private Boolean isParent = false; //是否为父节点
 
     @TableField(exist = false)
