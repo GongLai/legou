@@ -12,6 +12,7 @@
     <!-- 项目信息 -->
     <modelVersion>4.0.0</modelVersion>
     <artifactId>legou-item-service</artifactId>
+    <description>商品微服务的具体服务</description>
 
     <!-- 依赖配置 -->
     <dependencies>

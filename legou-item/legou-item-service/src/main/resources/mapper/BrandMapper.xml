@@ -4,31 +4,31 @@
 
     <select id="selectByPage" resultType="Brand">
         SELECT
-        *
+            *
         FROM
-        brand
+            `brand`
         <where>
             <if test="name != null and name != ''">
-                AND name LIKE '%${name}%'
+                AND `name` LIKE '%${name}%'
             </if>
         </where>
     </select>
 
     <delete id="deleteCategoryByBrand">
         DELETE FROM
-            category_brand
+            `category_brand`
         WHERE
-            brand_id = #{id}
+            `brand_id` = #{id}
     </delete>
 
     <insert id="insertCategoryAndBrand">
-        INSERT INTO category_brand(
-            category_id,
-            brand_id
+        INSERT INTO `category_brand`(
+            `category_id`,
+            `brand_id`
         ) VALUES(
-                    #{categoryId},
-                    #{brandId}
-                )
+            #{categoryId},
+            #{brandId}
+        )
     </insert>
 
     <select id="selectCategoryByBrand" resultType="Category">
@@ -38,9 +38,9 @@
             a.order_ AS "order",
             a.parent_id AS "parentId"
         FROM
-            category a
-                LEFT JOIN category_brand b ON b.category_id = a.id
-                LEFT JOIN brand c ON c.id = b.brand_id
+            `category` a
+                LEFT JOIN `category_brand` b ON b.category_id = a.id
+                LEFT JOIN `brand` c ON c.id = b.brand_id
         WHERE
             c.id = #{id}
     </select>
