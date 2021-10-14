@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hbb.legou.item.dao.SpuDao">
+
+    <resultMap id="spuMap" type="spu">
+        <id column="id" property="id" />
+        <association property="spuDetail" javaType="SpuDetail" select="com.hbb.legou.item.dao.SpuDetailDao.selectById" column="id">
+            <id column="id" property="id" />
+        </association>
+        <collection property="skus" javaType="java.util.List" ofType="sku" select="com.hbb.legou.item.dao.SkuDao.findBySkuId" column="id">
+            <id column="id" property="id" />
+        </collection>
+    </resultMap>
+
+    <select id="selectByPage" resultType="Spu">
+        SELECT
+            a.*,
+            b.name as brandName,
+            c.title as categoryName
+        FROM
+            `spu` a
+        left join
+            `brand` b on a.brand_id=b.id
+        left join
+            `category` c on a.cid3=c.id
+        <where>
+            <if test="title != null and title != ''">
+                AND a.title LIKE '%${title}%'
+            </if>
+            <if test="cid3 != null">
+                AND cid3=#{cid3}
+            </if>
+            <if test="brandId != null">
+                AND brand_id=#{brandId}
+            </if>
+        </where>
+    </select>
+    
+    <select id="selectById" resultMap="spuMap">
+        SELECT
+            *
+        FROM
+            `spu`
+        WHERE
+            id=#{id}
+    </select>
+</mapper>

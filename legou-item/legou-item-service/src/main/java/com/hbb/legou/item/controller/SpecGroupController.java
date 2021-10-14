@@ -25,7 +25,7 @@ public class SpecGroupController extends BaseController<ISpecGroupService, SpecG
         } catch (Exception e) {
             e.printStackTrace();
             responseBean.setSuccess(false);
-            responseBean.setMsg("保存失败");
+            responseBean.setMessage("保存失败");
         }
         return responseBean;
     }

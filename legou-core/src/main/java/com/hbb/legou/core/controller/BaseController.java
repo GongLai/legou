@@ -89,7 +89,7 @@ public abstract class BaseController<S extends ICrudService<T>, T extends BaseEn
         } catch (Exception e) {
             e.printStackTrace();
             rm.setSuccess(false);
-            rm.setMsg("保存失败");
+            rm.setMessage("保存失败");
         }
         return rm;
     }
@@ -107,7 +107,7 @@ public abstract class BaseController<S extends ICrudService<T>, T extends BaseEn
         } catch (Exception e) {
             e.printStackTrace();
             rm.setSuccess(false);
-            rm.setMsg("保存失败");
+            rm.setMessage("保存失败");
         }
         return rm;
     }
@@ -123,7 +123,7 @@ public abstract class BaseController<S extends ICrudService<T>, T extends BaseEn
             service.removeByIds(ids);
         } catch (Exception e) {
             e.printStackTrace();
-            rm.setMsg("删除失败");
+            rm.setMessage("删除失败");
             rm.setSuccess(false);
         }
         return rm;

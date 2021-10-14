@@ -17,7 +17,7 @@ public class ResponseBean implements Serializable {
     /**
      * 提示信息
      */
-    private String msg = "操作成功";
+    private String message = "操作成功";
 
     /**
      * 添加，修改的实体类
@@ -43,12 +43,12 @@ public class ResponseBean implements Serializable {
         this.success = success;
     }
 
-    public String getMsg() {
-        return msg;
+    public String getMessage() {
+        return message;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public Object getModel() {
